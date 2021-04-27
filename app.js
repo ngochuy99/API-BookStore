@@ -6,6 +6,7 @@ var logger = require('morgan');
 var env = require('dotenv').config();
 var userRouting = require('./routes/user');
 var loginRouting = require('./routes/login');
+var registerRouting = require('./routes/register');
 var checkAuth = require('./routes/checkAuth');
 var model = require('./model');
 var app = express();
@@ -20,7 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use('/register',registerRouting);
 app.use('/login',loginRouting);
 app.use(checkAuth);
 app.use("/user",userRouting);
