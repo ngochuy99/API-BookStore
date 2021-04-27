@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var routing = require('./routes/routing');
-
+var env = require('dotenv').config();
+var userRouting = require('./routes/user');
+var loginRouting = require('./routes/login');
+var checkAuth = require('./routes/checkAuth');
+var model = require('./model');
 var app = express();
 
 // view engine setup
@@ -18,8 +20,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use("/routes",routing);
 
+app.use('/login',loginRouting);
+app.use(checkAuth);
+app.use("/user",userRouting);
+
+model.sequelize.sync().then(function(){
+  console.log("Sync success");
+}).catch(function(err){
+  console.log(err);
+})
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
