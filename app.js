@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var env = require('dotenv').config();
+//Router define
 var userRouting = require('./routes/user');
 var loginRouting = require('./routes/login');
 var registerRouting = require('./routes/register');
 var checkAuth = require('./routes/checkAuth');
+var accountRouting = require("./routes/account");
+
 var model = require('./model');
 var app = express();
 
@@ -23,7 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/register',registerRouting);
 app.use('/login',loginRouting);
-app.use(checkAuth);
+// app.use(checkAuth);
+app.use('/account',accountRouting);
 app.use("/user",userRouting);
 
 model.sequelize.sync().then(function(){
