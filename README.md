@@ -1,1 +1,1 @@
-Deploy on: https://bookstore-api-nodejs.herokuapp.com
+Deploy on: https://bookstore-restapi-nodejs.herokuapp.com/
