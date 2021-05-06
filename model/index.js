@@ -33,9 +33,25 @@ db.Sequelize = Sequelize;
 //define var
 db.User = require('./User')(sequelize,Sequelize);
 db.Account = require('./Account')(sequelize,Sequelize);
-
+db.Author = require("./Author")(sequelize,Sequelize);
+db.Publisher = require("./Publisher")(sequelize,Sequelize);
+db.Category = require("./Category")(sequelize,Sequelize);
+db.Book = require("./Book")(sequelize,Sequelize);
 //User-Account 1-1
 db.User.hasOne(db.Account);
 db.Account.belongsTo(db.User);
+
+//Book - Author n-1
+db.Author.hasMany(db.Book);
+db.Book.belongsTo(db.Author);
+
+//Book - Publisher n-1
+db.Publisher.hasMany(db.Book);
+db.Book.belongsTo(db.Publisher);
+
+//Book - Category n-n
+db.Book.belongsToMany(db.Category,{ through : "Book_Category",unique:false});
+db.Category.belongsToMany(db.Book,{ through : "Book_Category",unique:false});
+
 
 module.exports = db;

@@ -26,7 +26,6 @@ router.post('/',function(req,res){
                         email: email,
                     })
                     await user.save();
-                    console.log(user.id);
                     const acc = Account.build({
                         username:username,
                         password:encrypted,

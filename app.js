@@ -14,6 +14,7 @@ var accountRouting = require("./routes/account");
 var bookRouting = require("./routes/book");
 var categoryRouting = require("./routes/category");
 var authorRouting = require("./routes/author");
+var publisherRouting = require("./routes/publisher");
 
 var model = require('./model');
 var app = express();
@@ -36,7 +37,7 @@ app.use("/user",userRouting);
 app.use("/book",bookRouting);
 app.use("/author",authorRouting);
 app.use("/category",categoryRouting);
-
+app.use("/publisher",publisherRouting);
 model.sequelize.sync().then(function(){
   console.log("Sync success");
 }).catch(function(err){
