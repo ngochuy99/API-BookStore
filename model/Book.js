@@ -20,6 +20,10 @@ module.exports = function(sequelize,Sequelize){
         description:{
             type:Sequelize.STRING,
             allowNull:true
+        },
+        Image:{
+            type:Sequelize.STRING,
+            allowNull:true
         }
     })
     return Book;
