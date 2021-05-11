@@ -5,16 +5,8 @@ module.exports = function(sequelize,Sequelize){
             primaryKey:true,
             autoIncrement:true
         },
-        total:{
-            type:Sequelize.DOUBLE,
-            allowNull:true
-        },
         destination:{
             type:Sequelize.STRING,
-            allowNull:false
-        },
-        quantity:{
-            type:Sequelize.INTEGER,
             allowNull:false
         },
         shipmentFee:{

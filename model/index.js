@@ -38,6 +38,7 @@ db.Publisher = require("./Publisher")(sequelize,Sequelize);
 db.Category = require("./Category")(sequelize,Sequelize);
 db.Book = require("./Book")(sequelize,Sequelize);
 db.Order = require("./Order")(sequelize,Sequelize);
+db.Book_Order = require("./Book_Order")(sequelize,Sequelize);
 //User-Account 1-1
 db.User.hasOne(db.Account);
 db.Account.belongsTo(db.User);
@@ -56,8 +57,8 @@ db.Category.belongsToMany(db.Book,{ through : "Book_Category",unique:false});
 
 //Book - Order n-n
 
-db.Book.belongsToMany(db.Order, { through : "Book_Order", unique:false});
-db.Order.belongsToMany(db.Book, { through : "Book_Order", unique:false});
+db.Book.belongsToMany(db.Order, { through : db.Book_Order});
+db.Order.belongsToMany(db.Book, { through : db.Book_Order});
 
 
 
