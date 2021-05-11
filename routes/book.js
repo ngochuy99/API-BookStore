@@ -38,7 +38,7 @@ router.post("/",async function(req,res){
         }
         else{
             var filename = Date.now();
-            var filepath = "../API-BookStore/public/images/"+filename+".png";
+            var filepath = process.cwd()+"/public/images/"+filename+".png";
             var book = await Book.build({
                 name:name,
                 inStock:inStock,
@@ -131,7 +131,7 @@ router.put("/:id",async function(req,res){
             });
             fs.unlinkSync(book.Image);
             var filename = Date.now();
-            var filepath = "../API-BookStore/public/images/"+filename+".png";
+            var filepath = process.cwd()+"/public/images/"+filename+".png";
             await Book.update({
                 name:name,
                 inStock:inStock,
@@ -139,7 +139,7 @@ router.put("/:id",async function(req,res){
                 description:description,
                 AuthorId:author.id,
                 PublisherId:publisher.id,
-                Image:image
+                Image:filepath
             },{
                 where:{
                     id:req.params.id
@@ -175,8 +175,8 @@ router.delete("/:id",async function(req,res){
 
 router.get('/test/image',async function(req,res){
     try {
-        const image = fs.readFileSync("../API-BookStore/public/images/1620697551141.png", { encoding: 'base64' });
-        console.log(image);
+        
+        console.log(process.cwd()+"/public/images/");
         res.send("OK");
     } catch (err) {
         returnError(res,err);
@@ -191,7 +191,8 @@ let returnError = function(res,err){
 }
 
 let saveImageFromBase64 = async function(Base64Image,filename){
-    fs.writeFile("../API-BookStore/public/images/"+filename+".png",Base64Image,'base64',function(err){
+    console.log(__dirname);
+    fs.writeFile(process.cwd()+"/public/images/"+filename+".png",Base64Image,'base64',function(err){
         if(err){
             console.log(err);
             throw err;
