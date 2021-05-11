@@ -40,7 +40,7 @@ app.use("/author",authorRouting);
 app.use("/category",categoryRouting);
 app.use("/publisher",publisherRouting);
 app.use("/order",orderRouting);
-model.sequelize.sync({force:false}).then(function(){
+model.sequelize.sync().then(function(){
   console.log("Sync success");
 }).catch(function(err){
   console.log(err);
