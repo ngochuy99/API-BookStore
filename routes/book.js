@@ -38,7 +38,7 @@ router.post("/",async function(req,res){
         }
         else{
             var filename = Date.now();
-            var filepath = process.cwd()+"/public/images/"+filename+".png";
+            var filepath = filename+".png";
             var book = await Book.build({
                 name:name,
                 inStock:inStock,
@@ -131,7 +131,7 @@ router.put("/:id",async function(req,res){
             });
             fs.unlinkSync(book.Image);
             var filename = Date.now();
-            var filepath = process.cwd()+"/public/images/"+filename+".png";
+            var filepath = filename+".png";
             await Book.update({
                 name:name,
                 inStock:inStock,
@@ -175,7 +175,7 @@ router.delete("/:id",async function(req,res){
 
 router.get('/test/image',async function(req,res){
     try {
-        
+        saveImageFromBase64(req.image,"asdw");
         console.log(process.cwd()+"/public/images/");
         res.send("OK");
     } catch (err) {
@@ -192,7 +192,7 @@ let returnError = function(res,err){
 
 let saveImageFromBase64 = async function(Base64Image,filename){
     console.log(__dirname);
-    fs.writeFile(process.cwd()+"/public/images/"+filename+".png",Base64Image,'base64',function(err){
+    fs.writeFile(filename+".png",Base64Image,'base64',function(err){
         if(err){
             console.log(err);
             throw err;
