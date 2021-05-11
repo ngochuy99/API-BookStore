@@ -56,9 +56,13 @@ db.Book.belongsToMany(db.Category,{ through : "Book_Category",unique:false});
 db.Category.belongsToMany(db.Book,{ through : "Book_Category",unique:false});
 
 //Book - Order n-n
-
 db.Book.belongsToMany(db.Order, { through : db.Book_Order});
 db.Order.belongsToMany(db.Book, { through : db.Book_Order});
+
+//User - Order 1 - n
+
+db.User.hasMany(db.Order);
+db.Order.belongsTo(db.User);
 
 
 
