@@ -5,11 +5,14 @@ var Book = model.Book;
 var Author = model.Author;
 var Publisher = model.Publisher;
 var Category = model.Category;
+var fs = require('fs');
+const base64 = require('node-base64-image');
 const { Op } = require("sequelize");
+const { Console } = require('console');
 
 router.post("/",async function(req,res){
     try {
-        const {name,inStock,price,description,author_firstname,author_lastname,publisher_name,category_list} = req.body;
+        const {name,inStock,price,description,author_firstname,author_lastname,publisher_name,category_list,image} = req.body;
         var categories = [];
         //Get foreign key id
         var author = await Author.findOne({
@@ -34,15 +37,19 @@ router.post("/",async function(req,res){
             res.send("author or publisher not found");
         }
         else{
+            var filename = Date.now();
+            var filepath = "../API-BookStore/public/images/"+filename+".png";
             var book = await Book.build({
                 name:name,
                 inStock:inStock,
                 price:price,
                 description:description,
                 AuthorId:author.id,
-                PublisherId:publisher.id
+                PublisherId:publisher.id,
+                Image:filepath
             });
             await book.save();
+            await saveImageFromBase64(image,filename);
             book.addCategories(categories);
             res.status(200).send("Create book success");
         }
@@ -57,6 +64,11 @@ router.get("/",async function(req,res){
             attributes:{exclude:["createdAt","updatedAt"]},
             include:[Author,Category,Publisher]
         })
+        for(index in books){
+            var filepath = books[index].Image;
+            const image = fs.readFileSync(filepath, { encoding: 'base64' });
+            books[index].Image = image;
+        }
         res.status(200).json({
             books:books
         })
@@ -67,15 +79,18 @@ router.get("/",async function(req,res){
 
 router.get("/:id",async function(req,res){
     try {
-        var books = await Book.findOne({
+        var book = await Book.findOne({
             attributes:{exclude:["createdAt","updatedAt"]},
             include:[Author,Category,Publisher],
             where:{
                 id:req.params.id
             }
         })
+        var filepath = book.Image;
+        const image = fs.readFileSync(filepath, { encoding: 'base64' });
+        book.Image = image;
         res.status(200).json({
-            books:books
+            book:book
         })
     } catch (err) {
         returnError(res,err);
@@ -84,7 +99,7 @@ router.get("/:id",async function(req,res){
 
 router.put("/:id",async function(req,res){
     try {
-        const {name,inStock,price,description,author_firstname,author_lastname,publisher_name,category_list} = req.body;
+        const {name,inStock,price,description,author_firstname,author_lastname,publisher_name,category_list,image} = req.body;
         var categories = [];
         //Get foreign key id
         var author = await Author.findOne({
@@ -109,23 +124,28 @@ router.put("/:id",async function(req,res){
             res.send("author or publisher not found");
         }
         else{
+            var book = await Book.findOne({
+                where:{
+                    id:req.params.id
+                }
+            });
+            fs.unlinkSync(book.Image);
+            var filename = Date.now();
+            var filepath = "../API-BookStore/public/images/"+filename+".png";
             await Book.update({
                 name:name,
                 inStock:inStock,
                 price:price,
                 description:description,
                 AuthorId:author.id,
-                PublisherId:publisher.id
+                PublisherId:publisher.id,
+                Image:image
             },{
                 where:{
                     id:req.params.id
                 }
             });
-            var book = await Book.findOne({
-                where:{
-                    id:req.params.id
-                }
-            });
+            await saveImageFromBase64(image,filename);
             book.setCategories(categories);
             res.status(200).send("Update book "+req.params.id+" success");
         }
@@ -136,14 +156,30 @@ router.put("/:id",async function(req,res){
 
 router.delete("/:id",async function(req,res){
     try {
+        var book = await Book.findOne({
+            where:{
+                id:req.params.id
+            }
+        });
         await Book.destroy({
             where:{
                 id:req.params.id
             }
         });
+        fs.unlinkSync(book.Image);
         res.status(200).send("Delete Book id "+req.params.id+" success");
     } catch (err) {
-        returnError(req,err);
+        returnError(res,err);
+    }
+})
+
+router.get('/test/image',async function(req,res){
+    try {
+        const image = fs.readFileSync("../API-BookStore/public/images/1620697551141.png", { encoding: 'base64' });
+        console.log(image);
+        res.send("OK");
+    } catch (err) {
+        returnError(res,err);
     }
 })
 
@@ -152,6 +188,15 @@ let returnError = function(res,err){
         message:err
     })
     throw err;
+}
+
+let saveImageFromBase64 = async function(Base64Image,filename){
+    fs.writeFile("../API-BookStore/public/images/"+filename+".png",Base64Image,'base64',function(err){
+        if(err){
+            console.log(err);
+            throw err;
+        }
+    })
 }
 
 module.exports = router;
