@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "009cfb4c-40b6-4869-a5e8-ef8aae01ded9",
+		"_postman_id": "a762f0e9-5879-4918-932e-971ffa9809b0",
 		"name": "BookstoreAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,11 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/user",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/user",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"user"
 					]
@@ -30,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"123456Aa@\"\r\n}",
+					"raw": "{\r\n    \"username\":\"user2\",\r\n    \"password\":\"123456Aa@\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -38,11 +40,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/login",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"login"
 					]
@@ -65,11 +69,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/register",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/register",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"register"
 					]
@@ -90,11 +96,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/user/1",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/user/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"user",
 						"1"
@@ -118,11 +126,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/user/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/user/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"user",
 						"2"
@@ -137,11 +147,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/user/15",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/user/15",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"user",
 						"15"
@@ -165,11 +177,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/account/3",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/account/3",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"account",
 						"3"
@@ -184,11 +198,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/account",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/account",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"account"
 					]
@@ -202,11 +218,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/author",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/author",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"author"
 					]
@@ -229,11 +247,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/author",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/author",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"author"
 					]
@@ -247,14 +267,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/author/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/author/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"author",
-						"2"
+						"1"
 					]
 				}
 			},
@@ -266,11 +288,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/author/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/author/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"author",
 						"2"
@@ -294,11 +318,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/publisher",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/publisher",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"publisher"
 					]
@@ -312,11 +338,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/publisher",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/publisher",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"publisher"
 					]
@@ -330,14 +358,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/publisher/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/publisher/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"publisher",
-						"2"
+						"1"
 					]
 				}
 			},
@@ -358,11 +388,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/publisher/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/publisher/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"publisher",
 						"2"
@@ -386,11 +418,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/publisher/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/publisher/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"publisher",
 						"2"
@@ -406,7 +440,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"adventure\"\r\n}",
+					"raw": "{\r\n    \"name\":\"comedy\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -414,11 +448,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/category",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/category",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"category"
 					]
@@ -432,11 +468,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/category",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/category",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"category"
 					]
@@ -450,11 +488,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/category/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/category/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"category",
 						"2"
@@ -478,11 +518,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/category/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/category/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"category",
 						"2"
@@ -497,11 +539,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/category/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/category/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"category",
 						"2"
@@ -517,7 +561,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"book 2\",\r\n    \"inStock\":30,\r\n    \"price\":300000,\r\n    \"description\":\"no description\",\r\n    \"author_firstname\":\"Stephen\",\r\n    \"author_lastname\":\"King\",\r\n    \"publisher_name\":\"Nhã Nam\",\r\n    \"category_list\":[\"horror\",\"adventure\"]\r\n}",
+					"raw": "{\r\n    \"name\":\"book 3\",\r\n    \"inStock\":30,\r\n    \"price\":300000,\r\n    \"description\":\"no description\",\r\n    \"author_firstname\":\"Stephen\",\r\n    \"author_lastname\":\"King\",\r\n    \"publisher_name\":\"Nhã Nam\",\r\n    \"category_list\":[\"comedy\",\"horror\"],\r\n    \"image\":\"/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEBUSEhAVFRUVFQ8VFRUVEA8VEBUPFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGi0eHx8tLS0tLS0tKy0vKy0tLS0tLS0tLS0tLy0tLS0tLSstLS0tLS0tLS0tKy0rLS0rLS0rK//AABEIALcBEwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAACAwABBAUGB//EADcQAAICAQIDBQYEBgIDAAAAAAABAhEDBCESMUFRYXGBkQUTFCKhsULB0fAyUmJy4fEGojOCkv/EABoBAAMBAQEBAAAAAAAAAAAAAAABAgMEBQb/xAApEQACAgICAgEEAAcAAAAAAAAAAQIRAyESMQQTQRQiUWEyUoGh4fDx/9oADAMBAAIRAxEAPwD5nMUxkmKkdh5MQJC2HIFsRqgS6IEgGQtIlBIYmQoIECSFohaQxloKi0i6GIGg0ig0gEXFBxREg4oDRESCUQoxGRiAwVENQGQgHGIwsU4g8I+cQVEB2AomnToWoj8C3AjI9HRxR2KURuOPyhKBrejwPInTozS5mvSZDJlW4emdMhmM4XCzuQybC9RlpCFlMupz2ZxRx48LlKkIzTtmaQcpAUW2fRePgUIgNMhdFiOrieXkLkHJi2ZjQEgAmQDRFUWQsALRaKQQyWRlEZaACBwiCMxoYBLkVQxIFgAKDigUh0IgNIKMRsYlxgNjEBtgxiMjEtRGwgBLkVGI2MAoQHQgUYvJRmyRBUR+SJSgI0U9ClEfijuUoj8UQInk0bcS2GuOwOFDsipFTlR85lnc2c3JzJjdEZBWd0cfKCQx5BM5AtlMVnbg8eMCiFpF0B1FUQuiDA8gwJBSBZkWgCFlgUVRCyDERFkLARQSIkEhgUOxxAih8EAMlAMdJCpANFRRqxxE4VubcMAQN0XGI6MS4wGxiM5p5UgFEbGJSiacWKwRy5fJpAwgOjjNGLAaHg2LtI87J5Db7OTNblUMnHcnASzsXkUkgYodjiVDGa8OIXJIwy+Q2h+njsDq50hy2RztTltmHLlI48MHkmJBkyNlG1nv4oUiUQhAs3shCFjKIUWQAPGtglspEFELRVFgMjIQgCJRZC0hgXFBURIsLAKCNMEJxo040BMwMiFNDpi2gsqPQ3TR3OhigI0mM6OLHsP4OLPnq0BCA6OIdjxjlAiU6PMnltmeGI6Om04vHA6emiqM3kOTPldF4NMN1OKos14WjH7UzqqRPNtnBGUpTSOGsZfux6iFGA3kPQcwMWI0xjRNktzBqtd0RHJz6JhCeV1EPWajojA5AORDeMeKPb8fx1iQVlgl2VZ1pFosFFgUkWQhdDsZCBUQBniSEogiiEIWAEIQtIALSLSCoiAQUUWkWkHGIDRcYmnGtgIxNEYbCJkIkgFHc0SiBjjuDKukdHS4qjZstJIRllw44i8crYrs8OVzuTN8JjOMVGGxl1OWmZTV6Riocno62LcfHI0cnTamjbDUoyaaMMmJpm5ZpUL4G+Yh61CMvtHsElJmccUvhHQ4EuYnNrIx5HJzayT6ibNI4f5jrw+Hyf3s06jVuXgIKojN1SVI9TFjUFUUWiwUEkM6KLRaREgkhWUiJBJESCSCxlJBUWkEkFgVRAiBYHhSUXRKGWCFe1V279en78yUXQCKSGQiUkPhHYCXKgGiorcKQ3S47YEuVK2VwjcUBixbj8OEnkjKWekBDGaViNOn0jZq+D2J9iOWfmJaOVOAGKBtz4aMzQ+Vmq8jlEZrcv8ACuxF6LeRkyMbpM3C7F0jKUKx0ju5aUTkZd5Nh59daMvvTLGpds58OKUVbNWMemc74gv4hltMp4mzdKYiUxDyMpMpIqOMcmFYuIaHZ0QUUGmWikEhWbplpBFJlphZathJBJA8RfEBaiw0gkLsKxmigGSwLLGUsYdkBIBXrPArNLqi/ia5odwPrt40yp8S5tPvpcidiuL+Co54vr9GNhNPk0ZGr7K7UKlia7/UOTH64v5OrFDcjpUcvTZJLk77ndUbIZ0/4tn9B8rMZ4mmMSO/7L0D4HKjgYtTBNOT2vsZ7LF7TwR064cuNt9OON+a5nJ5ed44pRW2ed5zyRSUU9mWGh25GrDoTND2jKTpVR0NNxS6nFPNOKubo83K8kV92jfpdIqG5tOuFgYduo3UZVwczkflpS7PNk5cjiajEc/Pgo16rVJS5g59TFwu9z0ceWSo9PHzVHEzcxaZeSW4MWehZ6i6GMoFstByFQSRcUUi0xchMckQX70rjDYljkxyYUWIUi1IdHRDxvyaVIvjEKQSY6OmOJIdxBWKQaGbKCDTDQEUGkBaiEgkSKDSAqikgki0gkgsYNEGcJAsD5jHLKPKT9bNuLWqT4WvN+Bg25vfusG+wzTaKljjI68IQa4o+v8AslNPmvOjmafM4uuKr/pbVjMuXfmny/DRXIweF32dLwe/cVkhfQxaXNFN3t2XyNbyc7jyre+3tQ0zOUGmJenlzpMuOntcqH45cVtNoON1uOgeSS0ZtNlnjl8k2ufXp4dTr4v+RamFbxfb8n3pmBpPa9/AJx23ZjkwY8mpJMzyLHk/jin/AEOrD/lE3/Eq6fLuvqXl9up7e89VI4qxfvYqcY9TJeFhXUUjD6TBeo0dKetj/OvUKOW1zOPwLoXGLXJtG3q1ov6ePwzqyZcZI5scs+2/Gi3qnyr7oKY147Z0XkQPvTGtSu/0DjkT5MpIa8dLs0e8JxibLsqiljih3EWpCrCTGXSHJhxYlMZFgWh0WMiKixkQLQ2IyIER0UBSLihkUVFDYxFZSRIoNIuMTH7Q9q4sO0ncqvhirlX2XmIo20EkcDJ/yfHwS4YS4/wxlXC33tM5cvbuqkucYf2xS+rtgJtI9okWfOcmtyt377J5SnRBBZnWjfWUV5ip40qSfFz5WNx6xp/NFPv5P1NMdZHomr57Lb0FoTc18WYlKSTVOtr2+l9gvhZ0ZZcblvkW3bDYqWDE3fvKvomvzHQeyu1/Y5/A+g7HlcWmpX3fNVdm5oySUflgrp3+FpmZaWb/AAvz2FRSkn2aMmqVpwTXan9u804tVF3vXjRydwoSaaafmCk0TLDFo6OTOqbi3J9nTxFvUN7ySj57vyGvG5Q2a/uT4PWxOP5NsifdsqGzOKjX+2DHVb9nY/1NCnJrmn03rb9THqYw5r0TtfbYkI/K386rdPoTv4Zrxg1tG3S6hJ/Or8uoPxDt3SvlsmjM89reO7rq7ffyG4oca23++xLb7ZahH4QvPqJN9ldnIbhy7q+XPfqAo7NfvuJPHw/ddyfMV2VxSDlJN/Ld/Y0QafTyox7PrVdepfH2t7L1Gm0ROCa0b/evs+pfxC7PsYZt9H0fgKeSXNmnI5/SzpfFLlT9BmPOnyfl19DkSm3+q6mnHcluvMdiljpHUUxkchzcLklu/wDQWOc09pX3OKf1Kshd0dWEzRj8Dkx101zUPR/qFk9sSj+GPo3+YWWvwegxYGzRLTqMeKU4xS5t7JeZ5Re28zW0kv8A1Vox5dRPJvOTfY2/suhLNeSR28/t/esUL/qlaXkv1MWq9qZ5qnPgX9Hyv1u/qYFJ1tt39RUabrilfmwM+TZ0oe18qVe/fm4t+r3Odr87cuLaUpbt3bsdHSf1L0FZMUk6UfNVQMUZK+zMnPpz+ozilycb8ldG/HCuy/Ci6XmNRE8y/BmgoVyfoyGr3ZY+Jn7EcacXF01v6kxpt0lbZo+GVW5pvevm28e8bouCNy4raW+zpIzSOt5KjrZePQKvmu+6inoYxdyace9tP/Ix+0Yd/ojFqtRxO0q89qLfEyh7W96RpnqIqFY6T70uKu4we8vqRvtK27PqQ3Z0Qgol2iOLXNNWSNGqOeUlwLfp05dwUDbXRlxz6HRwaramlLss58sai2pc+1OwEw6FOCmdbVYMbjxRlGPltfpZjwKDdSk0u23TEtOioz7Btkxg1GrHZ5q+HiuP9K2/2VptQ4NOD59vaKkr3WwCRL2aRVHRefiXFKLtXyTppcwoS8Gn380ZdJkp05fK+e2z8TZm00Gri/Bq3y8BevWiZZuMqaE58e9xT36GeSY/SzVtOW+/NSG8SupOD59Oo1EHlp1RiizTjxykulLbpfgaJZIpXUfN1+RbzPZqFrtUkVxMZZW+kDpMa/lrx6mrhS/ewmWWXSHq0KcHJVNJ+DpFGV27ZolFAvGJx5ccNr4e5uw/iofzfR0NNEuMr0i3hb6/T8yvhE/9lx1EP516hcafKcf35hSFc1+ie4SWyRlzaSbd8QWfPTriT/tX3e4jJOXbL1f5pCbRrjjNbs0RxS6hQi+yvQx/EtbNu14Fy1ClzlJeFV9BWivXJm9MOMzLixTq4y4k+kkOx5t6lFx7/wAPqWmYSj+NjVIkvAPhK4SjO0BZA+Aggsye5hCO6W3VpW2c2eROXyxpdgep1Ll4dnYIRk3Z6OKDW5PYyMaAlzDjO1RTQi1+wZA2WuYaSfYIoWFxEcStt78gAkYt8hscTr98hcMjXIKOZ9QE7CjLaily3KyVzVotZlW6AVF8NFyihan38wgCiJGz2fKO8Xs+jTavu7DJZO8aJlHkqOpOD6OflGKfqZ1iy3081G/Mfo9VxJLql6mkukzjc5QdNGfFpefE7vp08Nx0FGOy27ugUlsYMkMi/Gq7duXePoSufbNaTbdu13Kmv1F5IpS/8lPsdPfwMkc87pTt9nTyYz4O3du+9OxXZfDi9sblTVLiTvq4/ejPknXVPw2Q5YsnSQvJhydil5R+gmVGvyiY5x2bf/a16MbGre8afck/VGKHOq8rr7h6i10i+9WvIVluG6Hww47q732+bc0xtcvmXe1Zy45K5wj9f2g56p38jY00KWKT/wAm3LOMueO//ltCp6bHfKUb8KNGJNreUW/7Rc8nNOVd9tL6oZlFtaRqxSiklxRfml9Bvgr9DEpQa3kn5K/p+hMS/kUq7nHh+5XIyeM1vJ/TL0v7FQyJ9GvFNEWSXVet/lYy33eo0ZtV/wBFScr2jfmQZb7PsQAv9HmuZRRDE9goNPYhBAVKikQgwCUXe/3Df8SaVLvdkIIQtLmFCiiDGNUu7oA4r92QgElSxdbLtpbkIJjRXEWns1+0yEAdBaXJwyT/AHXU7yiQhpA4vLXTL4RE1JbKEa8ef0IQpnLGVMyT0bVt1XOq28LW4yGqpbwddfmTLIQ9PR0xfsX3FRzRlb95Lfu/wUsi4qTTffFqyECzTglY3PwWlJfcHEsfJLv6/voQgzNR+3sd7u18rvrvfLxF5Fwq+Bd/L8yEKoxUnyoPHNtcWy7qELJFv5oxve+f2LISzWKVsv4Xs4fJNP1Bek4VtOS89iyA0R7JXRax5NuHLfiv8BvPOC+aKfen+RCDrVhF8pcWiL2lHsf0IQhHNnV9LjP/2Q==\"\r\n    \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -525,11 +569,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/book",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"book"
 					]
@@ -543,11 +589,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/book",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"book"
 					]
@@ -561,11 +609,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/book/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"book",
 						"2"
@@ -581,7 +631,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"book 2 modified\",\r\n    \"inStock\":30,\r\n    \"price\":300000,\r\n    \"description\":\"no description\",\r\n    \"author_firstname\":\"Stephen\",\r\n    \"author_lastname\":\"King\",\r\n    \"publisher_name\":\"Nhã Nam\",\r\n    \"category_list\":[\"romance\",\"sci-fi\"]\r\n}",
+					"raw": "{\r\n    \"name\":\"book 2 modified\",\r\n    \"inStock\":30,\r\n    \"price\":300000,\r\n    \"description\":\"no description\",\r\n    \"author_firstname\":\"Stephen\",\r\n    \"author_lastname\":\"King\",\r\n    \"publisher_name\":\"Nhã Nam\",\r\n    \"category_list\":[\"adventure\",\"sci-fi\"],\r\n    \"image\":\"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\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -589,11 +639,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/book/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book/2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"book",
 						"2"
@@ -612,14 +664,171 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "localhost:3000/book/2",
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book/5",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"book",
-						"2"
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "imagetest",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\":\"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\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/book/test/image",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"book",
+						"test",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destination\":\"Hà Nội\",\r\n    \"shipmentFee\":50000,\r\n    \"userId\":1,\r\n    \"books\":\r\n    [{\r\n        \"book\":1,\r\n        \"quantity\":20\r\n    },{\r\n        \"book\":2,\r\n        \"quantity\":60\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/order",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllOrder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/order",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOrderById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/order/1",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"order",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteOrderById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/order/3",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"order",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrderById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destination\":\"Hà Nội\",\r\n    \"shipmentFee\":12345,\r\n    \"userId\":1,\r\n    \"books\":\r\n    [{\r\n        \"book\":1,\r\n        \"quantity\":90\r\n    },{\r\n        \"book\":2,\r\n        \"quantity\":50\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://bookstore-restapi-nodejs.herokuapp.com/order/4",
+					"protocol": "https",
+					"host": [
+						"bookstore-restapi-nodejs",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"order",
+						"4"
 					]
 				}
 			},
