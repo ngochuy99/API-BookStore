@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var env = require('dotenv').config();
 //Router define
+var orderRouting = require('./routes/order');
 var userRouting = require('./routes/user');
 var loginRouting = require('./routes/login');
 var registerRouting = require('./routes/register');
@@ -38,7 +39,8 @@ app.use("/book",bookRouting);
 app.use("/author",authorRouting);
 app.use("/category",categoryRouting);
 app.use("/publisher",publisherRouting);
-model.sequelize.sync().then(function(){
+app.use("/order",orderRouting);
+model.sequelize.sync({force:false}).then(function(){
   console.log("Sync success");
 }).catch(function(err){
   console.log(err);
