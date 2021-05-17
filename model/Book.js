@@ -22,7 +22,7 @@ module.exports = function(sequelize,Sequelize){
             allowNull:true
         },
         Image:{
-            type:Sequelize.STRING,
+            type:Sequelize.TEXT,
             allowNull:true
         }
     })
