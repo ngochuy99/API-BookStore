@@ -183,6 +183,15 @@ router.get('/test/image',async function(req,res){
     }
 })
 
+router.delete("/deleteAll",async function(req,res){
+    try {
+        await Book.destroy();
+        res.send("Delete all book!");
+    } catch (err) {
+        returnError(res,err)
+    }
+})
+
 let returnError = function(res,err){
     res.status(500).json({
         message:err
