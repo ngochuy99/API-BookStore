@@ -37,8 +37,6 @@ router.post("/",async function(req,res){
             res.send("author or publisher not found");
         }
         else{
-            var filename = Date.now();
-            var filepath = filename+".png";
             var book = await Book.build({
                 name:name,
                 inStock:inStock,
@@ -46,10 +44,9 @@ router.post("/",async function(req,res){
                 description:description,
                 AuthorId:author.id,
                 PublisherId:publisher.id,
-                Image:filepath
+                Image:image
             });
             await book.save();
-            await saveImageFromBase64(image,filename);
             book.addCategories(categories);
             res.status(200).send("Create book success");
         }
@@ -86,9 +83,6 @@ router.get("/:id",async function(req,res){
                 id:req.params.id
             }
         })
-        var filepath = book.Image;
-        const image = fs.readFileSync(filepath, { encoding: 'base64' });
-        book.Image = image;
         res.status(200).json({
             book:book
         })
@@ -129,9 +123,6 @@ router.put("/:id",async function(req,res){
                     id:req.params.id
                 }
             });
-            fs.unlinkSync(book.Image);
-            var filename = Date.now();
-            var filepath = filename+".png";
             await Book.update({
                 name:name,
                 inStock:inStock,
@@ -139,13 +130,12 @@ router.put("/:id",async function(req,res){
                 description:description,
                 AuthorId:author.id,
                 PublisherId:publisher.id,
-                Image:filepath
+                Image:image
             },{
                 where:{
                     id:req.params.id
                 }
             });
-            await saveImageFromBase64(image,filename);
             book.setCategories(categories);
             res.status(200).send("Update book "+req.params.id+" success");
         }
@@ -166,7 +156,6 @@ router.delete("/:id",async function(req,res){
                 id:req.params.id
             }
         });
-        fs.unlinkSync(book.Image);
         res.status(200).send("Delete Book id "+req.params.id+" success");
     } catch (err) {
         returnError(res,err);
