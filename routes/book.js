@@ -174,7 +174,9 @@ router.get('/test/image',async function(req,res){
 
 router.delete("/",async function(req,res){
     try {
-        await Book.destroy();
+        await Book.destroy({
+            truncate: true
+        });
         res.send("Delete all book!");
     } catch (err) {
         returnError(res,err)
