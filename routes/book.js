@@ -61,11 +61,6 @@ router.get("/",async function(req,res){
             attributes:{exclude:["createdAt","updatedAt"]},
             include:[Author,Category,Publisher]
         })
-        for(index in books){
-            var filepath = books[index].Image;
-            const image = fs.readFileSync(filepath, { encoding: 'base64' });
-            books[index].Image = image;
-        }
         res.status(200).json({
             books:books
         })
@@ -172,17 +167,6 @@ router.get('/test/image',async function(req,res){
     }
 })
 
-// router.delete("/",async function(req,res){
-//     try {
-//         await Book.destroy({
-//             truncate: true
-//         });
-//         res.send("Delete all book!");
-//     } catch (err) {
-//         returnError(res,err)
-//     }
-// })
-
 let returnError = function(res,err){
     res.status(500).json({
         message:err
@@ -190,14 +174,5 @@ let returnError = function(res,err){
     throw err;
 }
 
-let saveImageFromBase64 = async function(Base64Image,filename){
-    console.log(__dirname);
-    fs.writeFile(filename+".png",Base64Image,'base64',function(err){
-        if(err){
-            console.log(err);
-            throw err;
-        }
-    })
-}
 
 module.exports = router;
