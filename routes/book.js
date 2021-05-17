@@ -172,7 +172,7 @@ router.get('/test/image',async function(req,res){
     }
 })
 
-router.delete("/deleteAll",async function(req,res){
+router.delete("/",async function(req,res){
     try {
         await Book.destroy();
         res.send("Delete all book!");
