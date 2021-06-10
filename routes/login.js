@@ -13,9 +13,9 @@ router.post('/',async function(req,res){
     });
     if(acc !=null&&bcrypt.compareSync(req.body.password,acc.password)){
         var user = await acc.getUser();
-        var token = await jwt.generateToken(user,process.env.secretkey,process.env.tokenLife);
+        // var token = await jwt.generateToken(user,process.env.secretkey,process.env.tokenLife);
         res.status(200).json({
-            accessToken : token
+            user:user
         });
     }
     else{

@@ -16,7 +16,7 @@ router.post('/',function(req,res){
             }
             else{
                 try {
-                    const {firstname,lastname,address,tel,gender,email,username} = req.body;
+                    const {firstname,lastname,address,tel,gender,email,username,role} = req.body;
                     const user = User.build({
                         firstname: firstname,
                         lastname: lastname,
@@ -24,6 +24,7 @@ router.post('/',function(req,res){
                         tel: tel,
                         gender: gender,
                         email: email,
+                        role:role
                     })
                     await user.save();
                     const acc = Account.build({
